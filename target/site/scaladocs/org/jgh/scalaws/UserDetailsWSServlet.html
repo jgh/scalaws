@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>class UserDetailsWSServlet in org.jgh.scalaws</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.5.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">scalaws 1.0-SNAPSHOT API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/jgh/scalaws$package.html" target="_self">org.jgh.scalaws</a>
+        <br></br>
+        <span class="entity">class  UserDetailsWSServlet</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/jgh/scalaws/UserDetailsWSServlet"><code>org/jgh/scalaws/UserDetailsWSServlet.scala</code></a>]
+      </div><hr></hr>
+      <a name="UserDetailsWSServlet"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>class</code>
+        <em>UserDetailsWSServlet</em>
+      </dt>
+      <dd><code> extends </code><a href="../../../org/jgh/scalaws/WebserviceServlet.html" target="_self">WebserviceServlet</a><code> with </code><a href="../../../org/jgh/scalaws/DBAdapter.html" target="_self">DBAdapter</a></dd>
+    </dl>
+      
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Value Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> lazy val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/jgh/scalaws/UserDetailsWSServlet.html#datasource" target="_self">datasource</a></em>
+         : <a href="" target="contentFrame" class="javax/sql/DataSource">javax.sql.DataSource</a>
+        
+        
+      </td>
+    </tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/jgh/scalaws/UserDetailsWSServlet.html#handlePayload%28scala.xml.Node%29" target="_self">handlePayload</a></em>
+        (<em>payload</em> : <a href="" target="contentFrame" class="scala/xml/Node">scala.xml.Node</a>) : <a href="" target="contentFrame" class="scala/xml/Node">scala.xml.Node</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/jgh/scalaws/UserDetailsWSServlet.html#mapUser%28UserDetailsWSServlet.this.Conn%29" target="_self">mapUser</a></em>
+        (<em>c</em> : <a href="../../../org/jgh/scalaws/DBAdapter.Conn.html" target="_self">Conn</a>)(<em>r</em> : <a href="" target="contentFrame" class="java/sql/ResultSet">java.sql.ResultSet</a>) : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="" target="contentFrame" class="scala/xml/Node">scala.xml.Node</a>]
+        
+        
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/jgh/scalaws/DBAdapter.html" target="_self">DBAdapter</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/jgh/scalaws/DBAdapter.html#withConn%28%28DBAdapter.this.Conn%29%3D%3ESeq%5Bscala.xml.Node%5D%29" target="_self">withConn</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/jgh/scalaws/WebserviceServlet.html" target="_self">WebserviceServlet</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/jgh/scalaws/WebserviceServlet.html#soapEnvelope%28scala.xml.Node%29" target="_self">soapEnvelope</a>, <a href="../../../org/jgh/scalaws/WebserviceServlet.html#doPost%28javax.servlet.http.HttpServletRequest%2Cjavax.servlet.http.HttpServletResponse%29" target="_self">doPost</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="" target="contentFrame" class="javax/servlet/http/HttpServlet">javax.servlet.http.HttpServlet</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="#doGet" target="contentFrame" class="javax/servlet/http/HttpServlet">javax.servlet.http.HttpServlet.doGet</a>, <a href="#getLastModified" target="contentFrame" class="javax/servlet/http/HttpServlet">javax.servlet.http.HttpServlet.getLastModified</a>, <a href="#doHead" target="contentFrame" class="javax/servlet/http/HttpServlet">javax.servlet.http.HttpServlet.doHead</a>, <a href="#doPut" target="contentFrame" class="javax/servlet/http/HttpServlet">javax.servlet.http.HttpServlet.doPut</a>, <a href="#doDelete" target="contentFrame" class="javax/servlet/http/HttpServlet">javax.servlet.http.HttpServlet.doDelete</a>, <a href="#doOptions" target="contentFrame" class="javax/servlet/http/HttpServlet">javax.servlet.http.HttpServlet.doOptions</a>, <a href="#doTrace" target="contentFrame" class="javax/servlet/http/HttpServlet">javax.servlet.http.HttpServlet.doTrace</a>, <a href="#service" target="contentFrame" class="javax/servlet/http/HttpServlet">javax.servlet.http.HttpServlet.service</a>, <a href="#service" target="contentFrame" class="javax/servlet/http/HttpServlet">javax.servlet.http.HttpServlet.service</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="" target="contentFrame" class="javax/servlet/GenericServlet">javax.servlet.GenericServlet</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="#destroy" target="contentFrame" class="javax/servlet/GenericServlet">javax.servlet.GenericServlet.destroy</a>, <a href="#getInitParameter" target="contentFrame" class="javax/servlet/GenericServlet">javax.servlet.GenericServlet.getInitParameter</a>, <a href="#getInitParameterNames" target="contentFrame" class="javax/servlet/GenericServlet">javax.servlet.GenericServlet.getInitParameterNames</a>, <a href="#getServletConfig" target="contentFrame" class="javax/servlet/GenericServlet">javax.servlet.GenericServlet.getServletConfig</a>, <a href="#getServletContext" target="contentFrame" class="javax/servlet/GenericServlet">javax.servlet.GenericServlet.getServletContext</a>, <a href="#getServletInfo" target="contentFrame" class="javax/servlet/GenericServlet">javax.servlet.GenericServlet.getServletInfo</a>, <a href="#init" target="contentFrame" class="javax/servlet/GenericServlet">javax.servlet.GenericServlet.init</a>, <a href="#init" target="contentFrame" class="javax/servlet/GenericServlet">javax.servlet.GenericServlet.init</a>, <a href="#log" target="contentFrame" class="javax/servlet/GenericServlet">javax.servlet.GenericServlet.log</a>, <a href="#log" target="contentFrame" class="javax/servlet/GenericServlet">javax.servlet.GenericServlet.log</a>, <a href="#getServletName" target="contentFrame" class="javax/servlet/GenericServlet">javax.servlet.GenericServlet.getServletName</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Value Details</td></tr>
+        </table><div><a name="datasource"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>lazy val</code>
+        <em>datasource</em> : <a href="" target="contentFrame" class="javax/sql/DataSource">javax.sql.DataSource</a>
+      </dt>
+      <dd></dd>
+    </dl><dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../org/jgh/scalaws/DBAdapter.html" target="_self">DBAdapter</a>.<a href="../../../org/jgh/scalaws/DBAdapter.html#datasource" target="_self">datasource</a>
+        </dd>
+      </dl><hr></hr></div>
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="mapUser%28UserDetailsWSServlet.this.Conn%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>mapUser</em>(<em>c</em> : <a href="../../../org/jgh/scalaws/DBAdapter.Conn.html" target="_self">Conn</a>)(<em>r</em> : <a href="" target="contentFrame" class="java/sql/ResultSet">java.sql.ResultSet</a>) : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="" target="contentFrame" class="scala/xml/Node">scala.xml.Node</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="handlePayload%28scala.xml.Node%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>handlePayload</em>(<em>payload</em> : <a href="" target="contentFrame" class="scala/xml/Node">scala.xml.Node</a>) : <a href="" target="contentFrame" class="scala/xml/Node">scala.xml.Node</a>
+      </dt>
+      <dd></dd>
+    </dl><dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../org/jgh/scalaws/WebserviceServlet.html" target="_self">WebserviceServlet</a>.<a href="../../../org/jgh/scalaws/WebserviceServlet.html#handlePayload%28scala.xml.Node%29" target="_self">handlePayload</a>
+        </dd>
+      </dl><hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2009. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">scalaws 1.0-SNAPSHOT API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

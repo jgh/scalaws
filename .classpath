@@ -1,0 +1,20 @@
+<classpath>
+  <classpathentry kind="src" path="src/test/scala" output="target/test-classes" including="**/*.java"/>
+  <classpathentry kind="src" path="src/test/resources" output="target/test-classes" excluding="**/*.java"/>
+  <classpathentry kind="src" path="src/main/scala" including="**/*.java"/>
+  <classpathentry kind="src" path="src/main/resources" excluding="**/*.java"/>
+  <classpathentry kind="output" path="target/classes"/>
+  <classpathentry kind="var" path="M2_REPO/javax/mail/mail/1.4/mail-1.4.jar" sourcepath="M2_REPO/javax/mail/mail/1.4/mail-1.4-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar" sourcepath="M2_REPO/javax/servlet/servlet-api/2.5/servlet-api-2.5-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/geronimo-spec/geronimo-spec-jta/1.0.1B-rc4/geronimo-spec-jta-1.0.1B-rc4.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/mortbay/jetty/jetty/6.1.20/jetty-6.1.20.jar" sourcepath="M2_REPO/org/mortbay/jetty/jetty/6.1.20/jetty-6.1.20-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/mortbay/jetty/jetty-naming/6.1.20/jetty-naming-6.1.20.jar" sourcepath="M2_REPO/org/mortbay/jetty/jetty-naming/6.1.20/jetty-naming-6.1.20-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/mortbay/jetty/jetty-plus/6.1.20/jetty-plus-6.1.20.jar" sourcepath="M2_REPO/org/mortbay/jetty/jetty-plus/6.1.20/jetty-plus-6.1.20-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/mortbay/jetty/jetty-util/6.1.20/jetty-util-6.1.20.jar" sourcepath="M2_REPO/org/mortbay/jetty/jetty-util/6.1.20/jetty-util-6.1.20-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/junit/junit/4.5/junit-4.5.jar" sourcepath="M2_REPO/junit/junit/4.5/junit-4.5-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/oracle/ojdbc/10.2.0.1.0/ojdbc-10.2.0.1.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/scala-lang/scala-compiler/2.7.5/scala-compiler-2.7.5.jar" sourcepath="M2_REPO/org/scala-lang/scala-compiler/2.7.5/scala-compiler-2.7.5-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.jar"/>
+  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+  <classpathentry kind="con" path="ch.epfl.lamp.sdt.launching.SCALA_CONTAINER"/>
+</classpath>

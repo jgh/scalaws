@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="UserDetails"
+             targetNamespace="urn:www.scalaws.org:UserDetails:v1"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:tns="urn:www.scalaws.org:UserDetails:v1"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"             
+             xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/">
+	<types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:www.scalaws.org:UserDetails:v1">
+			<include schemaLocation="UserDetails.xsd" />
+		</schema>
+	</types>
+	
+	<message name="FindUsersRequestMessage">
+		<part name="payload" element="tns:FindUsersRequest"/>
+	</message>
+	<message name="FindUsersResponseMessage">
+		<part name="payload" element="tns:Users"/>
+	</message>
+	<message name="AllUsersRequestMessage">
+		<part name="payload" element="tns:AllUsersRequest"/>
+	</message>
+	<message name="AllUsersResponseMessage">
+		<part name="payload" element="tns:Users"/>
+	</message>
+	<message name="InsertUserRequestMessage">
+		<part name="payload" element="tns:User"/>		
+	</message>
+	<message name="InsertUserResponseMessage">
+		<part name="payload" element="tns:Done"/>		
+	</message>
+
+	<portType name="UserDetails">
+		<operation name="findUsers">
+			<input  message="tns:FindUsersRequestMessage" />
+			<output message="tns:FindUsersResponseMessage"/>
+		</operation>		
+		<operation name="allUsers">
+			<input  message="tns:AllUsersRequestMessage" />
+			<output message="tns:AllUsersResponseMessage"/>
+		</operation>		
+		<operation name="insertUser">
+			<input  message="tns:InsertUserRequestMessage" />
+			<output message="tns:InsertUserResponseMessage"/>
+		</operation>		
+	</portType>
+
+ 	<binding name="UserDetailsBinding" type="tns:UserDetails">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="findUsers">
+            <soap:operation style="document" soapAction="findUsers"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="allUsers">
+            <soap:operation style="document" soapAction="allUsers"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="insertUser">
+            <soap:operation style="document" soapAction="insertUser"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+       
+    </binding>
+    <service name="UserDetails">
+        <port name="UserDetailsPort" binding="tns:UserDetailsBinding">
+            <soap:address location="http://localhost:9090/services/UserDetails"/>
+        </port>
+    </service>	
+</definitions>
