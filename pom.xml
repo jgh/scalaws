@@ -52,8 +52,8 @@
 			<version>4.5</version>
 			<scope>test</scope>
 		</dependency>
-		
-		
+
+
 		<dependency>
 			<groupId>org.scala-lang</groupId>
 			<artifactId>scala-compiler</artifactId>
@@ -63,9 +63,9 @@
          <!-- OracleDB Driver -->
 		<dependency>
 			<groupId>com.oracle</groupId>
-			<artifactId>ojdbc</artifactId>
-			<version>10.2.0.1.0</version>
-		<!-- 	<scope>test</scope> -->
+			<artifactId>ojdbc14</artifactId>
+			<version>10.2.0.3.0</version>
+		<!--<scope>test</scope> -->
 		</dependency>
 		<dependency>
 			<groupId>org.mortbay.jetty</groupId>
@@ -120,7 +120,7 @@
                                 </compilerPlugin>
                             </compilerPlugins>
                         </configuration>
-                    </execution> 
+                    </execution>
 				</executions>
 				<configuration>
 					<scalaVersion>${scala.version}</scalaVersion>

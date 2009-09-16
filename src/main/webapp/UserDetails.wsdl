@@ -3,14 +3,14 @@
              targetNamespace="urn:www.scalaws.org:UserDetails:v1"
              xmlns="http://schemas.xmlsoap.org/wsdl/"
              xmlns:tns="urn:www.scalaws.org:UserDetails:v1"
-             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"             
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
              xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/">
 	<types>
 		<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:www.scalaws.org:UserDetails:v1">
 			<include schemaLocation="UserDetails.xsd" />
 		</schema>
 	</types>
-	
+
 	<message name="FindUsersRequestMessage">
 		<part name="payload" element="tns:FindUsersRequest"/>
 	</message>
@@ -24,28 +24,28 @@
 		<part name="payload" element="tns:Users"/>
 	</message>
 	<message name="InsertUserRequestMessage">
-		<part name="payload" element="tns:User"/>		
+		<part name="payload" element="tns:User"/>
 	</message>
 	<message name="InsertUserResponseMessage">
-		<part name="payload" element="tns:Done"/>		
+		<part name="payload" element="tns:Done"/>
 	</message>
 
 	<portType name="UserDetails">
 		<operation name="findUsers">
 			<input  message="tns:FindUsersRequestMessage" />
 			<output message="tns:FindUsersResponseMessage"/>
-		</operation>		
+		</operation>
 		<operation name="allUsers">
 			<input  message="tns:AllUsersRequestMessage" />
 			<output message="tns:AllUsersResponseMessage"/>
-		</operation>		
+		</operation>
 		<operation name="insertUser">
 			<input  message="tns:InsertUserRequestMessage" />
 			<output message="tns:InsertUserResponseMessage"/>
-		</operation>		
+		</operation>
 	</portType>
 
- 	<binding name="UserDetailsBinding" type="tns:UserDetails">
+	<binding name="UserDetailsBinding" type="tns:UserDetails">
         <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
         <operation name="findUsers">
             <soap:operation style="document" soapAction="findUsers"/>
@@ -74,11 +74,11 @@
                 <soap:body use="literal"/>
             </output>
         </operation>
-       
+
     </binding>
     <service name="UserDetails">
         <port name="UserDetailsPort" binding="tns:UserDetailsBinding">
             <soap:address location="http://localhost:9090/services/UserDetails"/>
         </port>
-    </service>	
+    </service>
 </definitions>

@@ -13,35 +13,35 @@
 			</sequence>
 		</complexType>
 	</element>
-	
+
 	<element name="Done" >
 		<complexType>
 			<sequence/>
 		</complexType>
 	</element>
-	
-	
+
+
 	<complexType name="UserType">
-		
-		
-		<sequence>	
-			<element name="Roles" type="tns:RolesListType" />			
+
+
+		<sequence>
+			<element name="Roles" type="tns:RolesListType" />
 		</sequence>
 		<attribute name="id" type="long"/>
 		<attribute name="firstName" type="string"/>
 		<attribute name="lastName" type="string"/>
 
 	</complexType>
-	
+
 	<complexType name="RolesListType">
 		<sequence>
 			<element name="Role" type="tns:RoleType" maxOccurs="unbounded"/>
 		</sequence>
 	</complexType>
-	
+
 	<complexType name="RoleType">
-		<sequence>	
-			<element name="Description" type="string" />			
+		<sequence>
+			<element name="Description" type="string" />
 		</sequence>
 		<attribute name="name" type="string"/>
 	</complexType>
