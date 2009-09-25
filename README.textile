@@ -1,4 +1,16 @@
+h1. Purpose
+
+100 LOC (I went a little over)
+
+
 h1. Installation
+
+
+h2. Install Maven
+
+
+
+h2. Install Database
 
 By default uses a local Oracle XE database
 

@@ -96,11 +96,13 @@
    <soapenv:Header/>
    <soapenv:Body>
       <urn:User id="3" firstName="Robert" lastName="Redford2">
-<urn:Roles>
+
+<urn:Roles>
 	<urn:Role name="45454">
                <urn:Description>2</urn:Description>
         </urn:Role>
-</urn:Roles>
+
+</urn:Roles>
 </urn:User>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:www.scalaws.org:UserDetails:v1/UserDetails/insertUserRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/></con:soapui-project>
