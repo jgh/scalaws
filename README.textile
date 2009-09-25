@@ -1,7 +1,14 @@
 h1. Purpose
 
-100 LOC (I went a little over)
+In my day job I write a lot of SOAP webservice using a variety of tools/frameworks/languages. I wrote this as a way to show how easily this can be done in scala.
 
+h2. Goals
+
+* Functioning SOAP webservice
+* Interacts with database
+* 100 LOC (I went a little over)
+* Show off features of scala language
+* No libraries/frameworks just core scala code.
 
 h1. Installation
 
@@ -14,6 +21,8 @@ h2. Install Database
 
 By default uses a local Oracle XE database
 
+Oracle XE can be downloaded from here
+"http://www.oracle.com/technology/products/database/xe/index.html":http://www.oracle.com/technology/products/database/xe/index.htmll
 
 h2. Create 'test_user' in local oracle database..
 
@@ -24,12 +33,12 @@ To use another RDBMS edit the jetty-env.xml
 # Update the jdbc connection string and user/password
 Modify the pom.xml dependencies to include the JDBC driver jar of your database.
 
-Oracle XE can be downloaded from here
-"http://www.oracle.com/technology/products/database/xe/index.html":http://www.oracle.com/technology/products/database/xe/index.htmll
 
-h2. Run create.sql script.
+h2. Run create-oracle.sql script.
 
 This will create the database objects and populate some data
+
+Note. this is an oracle specific script, for other RDBMS you will have to modify
 
 h2. Install Oracle DB driver into local maven repository
 
