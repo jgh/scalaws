@@ -15,7 +15,7 @@ trait DBAdapter {
     //Objects can be functions by implementing an apply method.
     def apply(s:String) = new  Param(Types.VARCHAR, s)
     def apply(x:NodeSeq) = new  Param(Types.VARCHAR, x.text)
-    def apply(i:BigInt) = new  Param(Types.BIGINT, i)
+    def apply(i:BigInt) = new  Param(Types.BIGINT, i.bigInteger)
   }
 
   //Functions are objects and can be passed as parameters .
@@ -59,7 +59,7 @@ abstract class WebserviceServlet extends HttpServlet {
 
    override def doPost(req:HttpServletRequest, resp:HttpServletResponse) = {
     //Type inference - No need to declare types. Most of the time the compiler can infer what
-     //that type a value is by how it is used.
+     //that type a value is by how it is used
     val response = try {
 		val in = XML.load( req.getInputStream)
 		//Xpath like queries on XML. the \ operator is actually a method. in \ "Body" same as in.\("Body")
@@ -112,11 +112,19 @@ class UserDetailsWSServlet extends WebserviceServlet with DBAdapter {
 		</Users>)
     }
     case (<User>{roles@_*}</User>) => withConn(c =>  { //Anonymous function
-			  val params = Seq( Param( BigInt (payload \ "@id" text)),
-                            Param( payload \ "@firstName"),
-                            Param(payload \ "@lastName")                            )
+      val id = Param(BigInt(payload \ "@id" text))
+      val params = Seq( id,
+                        Param( payload \ "@firstName"),
+                        Param(payload \ "@lastName")                            )
 			c.insert("insert into user_t (id, firstName, lastName) values ( ?, ?, ?)", params:_*) //_* tells compiler that params is already a Seq (vararg)
-          Seq()     //TODO:inserting roles left as exercise for reader
+
+      val roles = payload \ "Roles" \ "Role"
+      println(roles)
+      roles foreach (r => {
+        println(r)
+        c.insert("insert into role_t (name, description, owner) values ( ?, ?, ?)", Seq(Param(r \ "@name"), Param((r \ "Description" ).text), id):_*)
+      })
+      Seq()     //TODO:inserting roles left as exercise for reader
 		})
 		(<Done/>)
     }
