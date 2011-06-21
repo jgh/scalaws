@@ -12,44 +12,12 @@ h2. Goals
 
 h1. Installation
 
-
 h2. Install Maven
-
-
 
 h2. Install Database
 
-By default uses a local Oracle XE database
-
-Oracle XE can be downloaded from here
-"http://www.oracle.com/technology/products/database/xe/index.html":http://www.oracle.com/technology/products/database/xe/index.htmll
-
-h2. Create 'test_user' in local oracle database..
-
-Alternatively edit src/main/webapp/WEB-INF/jetty-env.xml to point to a different database/user
-
-To use another RDBMS edit the jetty-env.xml
-# Change the class name to an appropriate value: class="oracle.jdbc.pool.OracleConnectionPoolDataSource"
-# Update the jdbc connection string and user/password
-Modify the pom.xml dependencies to include the JDBC driver jar of your database.
-
-
-h2. Run create-oracle.sql script.
-
-This will create the database objects and populate some data
-
-Note. this is an oracle specific script, for other RDBMS you will have to modify
-
-h2. Install Oracle DB driver into local maven repository
-
-Due to licensing issues the Oracle DB driver can not be installed into any public maven repositories
-If installed Oracle XE is installed on windows driver will be here:
-C:\oraclexe\app\oracle\product\10.2.0\server\jdbc\lib\ojdbc14.jar
-Run maven install:
-@>mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.2.0.3.0 -Dpackaging=jar -Dfile=C:\oraclexe\app\oracle\product\10.2.0\server\jdbc\lib\ojdbc14.jar@
-
-Otherwise you can go here to download it:
-http://www.oracle.com/technology/software/tech/java/sqlj_jdbc/index.html
+By default uses a embedded HSQL database. This does not require any installation it also does not preserve data between
+restarts. The Bootstrap class creates the database tables on startup.
 
 h2. Start jetty webserver on port 9090
 
@@ -62,3 +30,46 @@ h2. Open UserDetails-soapui-project.xml with SoapUI.
 SOAP UI is an free soap testing toolkit available here:  "http://www.soapui.org/":http://www.soapui.org/l
 
 Or the wsdl is served from "http://localhost:9090/UserDetails.wsdl":http://localhost:9090/UserDetails.wsdll
+
+h3. Using an Oracle database
+
+Alternatively you can use a Oracle XE database. If you are doing this disable the Bootstrap class by removing it from the
+web.xml.
+
+h4. Install Oracle XE
+
+Oracle XE can be downloaded from here
+"http://www.oracle.com/technology/products/database/xe/index.html":http://www.oracle.com/technology/products/database/xe/index.htmll
+
+h4. Create 'test_user' in local oracle database..
+
+h4. Run create-oracle.sql script.
+
+This will create the database objects and populate some data
+
+Note. this is an oracle specific script, for other RDBMS you will have to modify
+
+h4. Install Oracle DB driver into local maven repository
+
+Due to licensing issues the Oracle DB driver can not be installed into any public maven repositories
+If installed Oracle XE is installed on windows driver will be here:
+C:\oraclexe\app\oracle\product\10.2.0\server\jdbc\lib\ojdbc14.jar
+Run maven install:
+@>mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.2.0.3.0 -Dpackaging=jar -Dfile=C:\oraclexe\app\oracle\product\10.2.0\server\jdbc\lib\ojdbc14.jar@
+
+Otherwise you can go here to download it:
+http://www.oracle.com/technology/software/tech/java/sqlj_jdbc/index.html
+
+h4. Add oracle driver to classpath.
+
+In the pom.xml uncomment the oracle database driver  dependency.
+
+h4. Change  jetty configuration to point to oracle
+
+Edit src/main/webapp/WEB-INF/jetty-env.xml
+Uncomment the oracle datasource to point to a different database/user
+
+To use another RDBMS
+# Change the class name to an appropriate value: class="oracle.jdbc.pool.OracleConnectionPoolDataSource"
+# Update the jdbc connection string and user/password
+Modify the pom.xml dependencies to include the JDBC driver jar of your database.
