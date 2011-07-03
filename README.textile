@@ -29,7 +29,8 @@ SOAP UI is an free soap testing toolkit available here:  "http://www.soapui.org/
 
 Or the wsdl is served from "http://localhost:9090/UserDetails.wsdl":http://localhost:9090/UserDetails.wsdll
 
-h3. Change Database
+
+h1. Changing Database
 
 By default this project uses an embedded HSQL database. HSQL does not require any installation, it also does not preserve data between
 restarts. The Bootstrap class creates the database tables on startup.
