@@ -14,10 +14,8 @@ h1. Installation
 
 h2. Install Maven
 
-h2. Install Database
-
-By default uses a embedded HSQL database. This does not require any installation it also does not preserve data between
-restarts. The Bootstrap class creates the database tables on startup.
+Maven is available bere:
+http://maven.apache.org/download.html
 
 h2. Start jetty webserver on port 9090
 
@@ -31,7 +29,10 @@ SOAP UI is an free soap testing toolkit available here:  "http://www.soapui.org/
 
 Or the wsdl is served from "http://localhost:9090/UserDetails.wsdl":http://localhost:9090/UserDetails.wsdll
 
-h3. Using an Oracle database
+h3. Change Database
+
+By default this project uses an embedded HSQL database. HSQL does not require any installation, it also does not preserve data between
+restarts. The Bootstrap class creates the database tables on startup.
 
 Alternatively you can use a Oracle XE database. If you are doing this disable the Bootstrap class by removing it from the
 web.xml.
